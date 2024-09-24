@@ -1,0 +1,32 @@
+global:
+  sendAnonymousUsage: false
+
+providers:
+  docker:
+    exposedByDefault: false
+  file:
+    filename: /etc/traefik/traefik_dynamic.yml
+    watch: true
+
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: https
+          scheme: https
+  https:
+    address: ":443"
+
+api:
+  dashboard: true
+  insecure: true
+
+log:
+  filePath: "/data/logs/traefik.log"
+
+logLevel: DEBUG
+
+accessLog:
+  filePath: "/data/logs/access.log"

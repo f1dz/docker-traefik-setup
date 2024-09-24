@@ -1,0 +1,25 @@
+http:
+  middlewares:
+    dashboard-auth:
+      basicAuth:
+        users:
+          - {{env "TRAEFIK_USER"}}
+  routers:
+    api:
+      rule: 'Host(`{{ env "TRAEFIK_DOMAIN"}}`)'
+      entrypoints:
+       - web
+       - https
+      middlewares:
+       - dashboard-auth
+      service: api@internal
+      tls:
+        domains:
+          - main: {{ env "TRAEFIK_DOMAIN"}}
+            sans:
+              - '*.`{{ env "TRAEFIK_DOMAIN"}}`'
+
+tls:
+  certificates:
+    - certFile: "/etc/certs/local-cert.pem"
+      keyFile: "/etc/certs/local-key.pem"
