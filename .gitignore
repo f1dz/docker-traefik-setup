@@ -1,3 +1,4 @@
 .env
 /certs/*
 /data/logs/*
+/data/prometheus/*

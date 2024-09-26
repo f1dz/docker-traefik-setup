@@ -18,6 +18,8 @@ entryPoints:
           scheme: https
   https:
     address: ":443"
+  metrics:
+    address: ":8082"
 
 api:
   dashboard: true
@@ -30,3 +32,7 @@ logLevel: DEBUG
 
 accessLog:
   filePath: "/data/logs/access.log"
+
+metrics:
+  prometheus:
+    entryPoint: metrics
