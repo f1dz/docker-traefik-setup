@@ -45,6 +45,8 @@ services:
   grafana:
     image: grafana/grafana
     container_name: grafana
+    volumes:
+      - grafana-storage:/var/lib/grafana
     labels:
       - "traefik.http.routers.grafana.rule=Host(`${GRAFANA_DOMAIN}`)"
       - "traefik.port=3000"
@@ -62,4 +64,5 @@ networks:
     name: proxy
 
 volumes:
-  prometheus:
+  prometheus: {}
+  grafana-storage: {}
