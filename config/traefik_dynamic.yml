@@ -6,7 +6,7 @@ http:
           - {{env "TRAEFIK_USER"}}
   routers:
     api:
-      rule: 'Host({{ env "TRAEFIK_DOMAIN"}})'
+      rule: 'Host(`{{ env "TRAEFIK_DOMAIN"}}`)'
       entrypoints:
        - web
        - https
