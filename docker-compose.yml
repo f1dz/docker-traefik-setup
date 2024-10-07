@@ -20,10 +20,6 @@ services:
     environment:
       - TRAEFIK_DOMAIN
       - TRAEFIK_USER
-    command: 
-      - "--certificatesresolvers.myresolver.acme.httpChallenge.entryPoint=web"
-      - "--certificatesresolvers.myresolver.acme.email=offiedz@gmail.com"
-      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
     networks:
       - proxy
     logging:
