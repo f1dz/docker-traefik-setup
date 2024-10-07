@@ -15,9 +15,15 @@ services:
       - ./data/logs/access.log:/data/logs/access.log
       - ./data/logs/traefik.log:/data/logs/traefik.log
       - ./certs:/etc/certs:ro
+      - ./letsencrypt:/letsencrypt
+      - ./acme.json:/letsencrypt/acme.json
     environment:
       - TRAEFIK_DOMAIN
       - TRAEFIK_USER
+    command: 
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.myresolver.acme.email=your-email@gmail.com"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
     networks:
       - proxy
     logging:
