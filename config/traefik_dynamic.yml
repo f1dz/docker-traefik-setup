@@ -20,7 +20,7 @@ http:
             sans:
               - '*.`{{ env "TRAEFIK_DOMAIN"}}`'
 
-tls:
-  certificates:
-    - certFile: "/etc/certs/local-cert.pem"
-      keyFile: "/etc/certs/local-key.pem"
+# tls:
+#   certificates:
+#     - certFile: "/etc/certs/local-cert.pem"
+#       keyFile: "/etc/certs/local-key.pem"
