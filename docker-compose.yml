@@ -20,7 +20,8 @@ services:
     environment:
       - TRAEFIK_DOMAIN
       - TRAEFIK_USER
-    entrypoint: sh -c "chmod 600 /letsencrypt/acme.json"
+    command: 
+      - "chmod 600 /letsencrypt/acme.json"
     networks:
       - proxy
     logging:
