@@ -6,7 +6,7 @@ http:
           - {{env "TRAEFIK_USER"}}
   routers:
     api:
-      rule: 'Host(`{{ env "TRAEFIK_DOMAIN"}}`)'
+      rule: 'Host({{ env "TRAEFIK_DOMAIN"}})'
       entrypoints:
        - web
        - https
@@ -17,8 +17,8 @@ http:
         certResolver: myresolver
         domains:
           - main: {{ env "TRAEFIK_DOMAIN"}}
-            sans:
-              - '*.`{{ env "TRAEFIK_DOMAIN"}}`'
+            # sans:
+            #   - '*.{{ env "TRAEFIK_DOMAIN"}}'
 
 # tls:
 #   certificates:
