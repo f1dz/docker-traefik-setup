@@ -56,7 +56,7 @@ services:
       - "traefik.docker.network=proxy"
       - "traefik.frontend.passHostHeader=false"
       - "traefik.frontend.headers.SSLRedirect=true"
-      - "traefik.http.routers.grafana.tlscertresolver=myresolver"
+      - "traefik.http.routers.grafana.tls.certresolver=myresolver"
     networks:
       - proxy
 
