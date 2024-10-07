@@ -10,10 +10,16 @@ make init
 ### Manual
 Copy `.env-example` to `.env` and change the parameters as you wish. To generate the password hash you can use online file generator [here](https://bcrypt-generator.com).
 
-Create network on Docker if you don't have one
+Create logs file
 ```sh
 touch ./data/logs/access.log ./data/logs/traefik.log
+```
+Copy `.env`
+```sh
 cp ./.env-example ./.env;
+```
+Create network on Docker if you don't have one
+```sh
 docker network create proxy
 ```
 

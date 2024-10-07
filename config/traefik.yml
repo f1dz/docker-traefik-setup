@@ -43,4 +43,4 @@ certificatesResolvers:
       email: "offiedz@gmail.com"  # Replace with your email
       storage: "/letsencrypt/acme.json"
       httpChallenge:
-        entryPoint: "web"   
+        entryPoint: "web"
