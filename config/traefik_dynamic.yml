@@ -14,6 +14,7 @@ http:
        - dashboard-auth
       service: api@internal
       tls:
+        certResolver: myresolver
         domains:
           - main: {{ env "TRAEFIK_DOMAIN"}}
             sans:
