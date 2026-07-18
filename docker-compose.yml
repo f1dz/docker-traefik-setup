@@ -1,6 +1,6 @@
 services:
   reverse-proxy:
-    image: traefik:latest
+    image: traefik:3.7
     container_name: traefik
     security_opt:
       - no-new-privileges:true
